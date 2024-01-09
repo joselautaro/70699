@@ -1,0 +1,8 @@
+.tarjeta{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.tarjetaDos{
+    margin: 10px;
+}
