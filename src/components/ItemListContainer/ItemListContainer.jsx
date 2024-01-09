@@ -1,14 +1,14 @@
 import React from 'react'
 
-export const ItemListContainer = (props) => {
+export const ItemListContainer = ({losSimpsons}) => {
   return (
     <div>
         {
-            props.losSimpsons && props.losSimpsons.map((objeto, index) =>(
+            losSimpsons && losSimpsons.map(({id, nombre, description}, index) =>(
                 <div key={index}>
-                    <p>ID: {objeto.id}</p>
-                    <p>Nombre: {objeto.nombre}</p>
-                    <p>Descripcion: {objeto.description}</p>
+                    <p>ID: {id}</p>
+                    <p>Nombre: {nombre}</p>
+                    <p>Descripcion: {description}</p>
                     <hr />
                 </div>
             ))}
