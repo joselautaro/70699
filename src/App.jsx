@@ -1,6 +1,7 @@
-import {ItemCount} from './components/ItemCount/ItemCount';
+// import {ItemCount} from './components/ItemCount/ItemCount';
 import './App.css'
 import { ItemListContainer } from './components/ItemListContainer/ItemListContainer';
+import { Poke } from './components/Poke/Poke';
 
 function App() {
 
@@ -47,7 +48,7 @@ function App() {
       <div>
         <h1>Hola Mundo!</h1>
         <ItemListContainer losSimpsons={losSimpsons} />
-        <ItemCount/>
+        <Poke/>
       </div>
   )
 }
