@@ -97,3 +97,69 @@ export const Poke = () => {
 
     )
 }
+
+/*
+
+import React from 'react';
+import {ItemCount} from '../ItemCount/ItemCount'
+import './ItemListContainer.css';
+
+
+export const ItemListContainer = ({ losSimpsons }) => {
+    return (
+        <div className='tarjeta'>
+            {
+                losSimpsons && losSimpsons.map(({ id, nombre, description }, index) => (
+                    <div class="card tarjetaDos">
+                        <div class="card-body">
+                            <span>{id}</span>
+                            <h5 className="card-title">Nombre: {nombre}</h5>
+                            <p className="card-text">Description: {description}</p>
+                            <ItemCount/>
+                        </div>
+                    </div>
+                ))}
+        </div>
+    )
+}
+
+const losSimpsons = [
+
+    {
+      id: 1,
+      nombre: 'Homero',
+      description: 'Padre de familia'
+    },
+    {
+      id: 2,
+      nombre: 'Marge',
+      description: 'Madre de familia'
+    },
+    {
+      id: 3,
+      nombre: 'Bart',
+      description: 'Estudiante'
+    },
+    {
+      id: 4,
+      nombre: 'Lisa',
+      description: 'Flautista'
+    },
+    {
+      id: 5,
+      nombre: 'Magui',
+      description: 'Bebé'
+    },
+    {
+      id: 6,
+      nombre: 'Ayudante de Santa',
+      description: 'Perro de carrera'
+    },
+    {
+      id: 7,
+      nombre: 'Bola de pelos',
+      description: 'Michi'
+    }
+  ];
+
+*/

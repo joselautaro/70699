@@ -2,7 +2,12 @@
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    width: 100%;
 }
 .tarjetaDos{
     margin: 10px;
+}
+img{
+    width: 300px;
+    height: 200px;
 }
