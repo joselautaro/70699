@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { pedirProductos } from '../../helpers/pedirProductos';
 import { ItemCount } from '../ItemCount/ItemCount'
-import { ImSpinner3 } from "react-icons/im";
 import './ItemListContainer.css';
 
 
@@ -22,7 +21,7 @@ export const ItemListContainer = () => {
             .catch((error) => {
                 console.log(error);
             })
-            .finally(() =>{
+            .finally(() => {
                 setLoading(false)
             })
     }, [])
@@ -35,11 +34,11 @@ export const ItemListContainer = () => {
             <h1>Lista de productos</h1>
 
             <div className='tarjeta'>
-                {
-                    loading
-                    ?<div className='spinner'><span class="spinner-grow spinner-grow-xxl" aria-hidden="true"></span>
-                    </div>
-                    :productos.map((productos) => (
+                {loading ? <div className='spinner'>
+                    <span class="spinner-grow spinner-grow-xxl" aria-hidden="true">
+                    </span>
+                            </div>
+                    : productos.map((productos) => (
                         <div className='card' key={productos.id}>
                             <img src={productos.photo} alt={productos.photo} />
                             <h2>{productos.description}</h2>
