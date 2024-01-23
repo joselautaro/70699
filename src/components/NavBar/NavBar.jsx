@@ -7,9 +7,10 @@ export const NavBar = () =>{
     return(
         <nav>
             <Link className="link" to='/'>Home</Link>
-            <Link className="link" to='/contador'>Contador</Link>
-            <Link className="link" to='/poke'>Poke Api</Link>
-            <Link className="link" to='/check'>Check</Link>
+            <Link className="link" to='/productos/bazar'>Bazar</Link>
+            <Link className="link" to='/productos/tecnologia'>Tecnología</Link>
+            <Link className="link" to='/productos/ropa'>Ropa</Link>
+            <Link className="link" to='/productos/musica'>Música</Link>
             <Link className="link" to='cart'><Cart/></Link>
         </nav>
     )

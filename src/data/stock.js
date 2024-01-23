@@ -14,7 +14,7 @@ export const stock = [
         description: 'Computadora',
         photo: 'https://fastly.picsum.photos/id/0/5000/3333.jpg?hmac=_j6ghY5fCfSD6tvtcV74zXivkJSPIfR9B8w34XeQmvU',
         price: 1500000,
-        category: "tecnología",
+        category: "tecnologia",
         stock: 20
     },
     {
@@ -32,7 +32,7 @@ export const stock = [
         description: 'Guitarra',
         photo: 'https://fastly.picsum.photos/id/145/4288/2848.jpg?hmac=UkhcwQUE-vRBFXzDN1trCwWigpm7MXG5Bl5Ji103QG4',
         price: 1000000,
-        category: "música",
+        category: "musica",
         stock: 20
     },
 ];

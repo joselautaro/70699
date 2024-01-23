@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { pedirProductos } from '../../helpers/pedirProductos';
-import { ItemCount } from '../ItemCount/ItemCount'
+import { useParams } from 'react-router-dom';
+import { ItemList } from '../ItemList/ItemList';
 import './ItemListContainer.css';
 
 
@@ -10,13 +11,19 @@ export const ItemListContainer = () => {
 
     const [loading, setLoading] = useState(false)
 
+    const { categoryId } = useParams()
+
 
 
     useEffect(() => {
         setLoading(true)
         pedirProductos()
-            .then((productosObtenidos) => {
-                setProductos(productosObtenidos)
+            .then((res) => {
+                if(categoryId){
+                  setProductos(res.filter(prod => prod.category === categoryId))
+                }else{
+                    setProductos(res)
+                }
             })
             .catch((error) => {
                 console.log(error);
@@ -24,34 +31,19 @@ export const ItemListContainer = () => {
             .finally(() => {
                 setLoading(false)
             })
-    }, [])
+    }, [categoryId])
 
 
 
     return (
         <>
-
-            <h1>Lista de productos</h1>
-
             <div className='tarjeta'>
                 {loading ? <div className='spinner'>
-                    <span class="spinner-grow spinner-grow-xxl" aria-hidden="true">
+                    <span className="spinner-grow spinner-grow-xxl" aria-hidden="true">
                     </span>
-                            </div>
-                    : productos.map((productos) => (
-                        <div className='card' key={productos.id}>
-                            <img src={productos.photo} alt={productos.photo} />
-                            <h2>{productos.description}</h2>
-                            <i>{productos.category}</i>
-                            <b>Precio: ${productos.price}</b>
-                            <div className="contador">
-                                <ItemCount />
-                            </div>
-                            <p>Stock disponible: {productos.stock} unidades</p>
-                        </div>
-                    ))
+                    </div>
+                    :<ItemList productos={productos} />
                 }
-
             </div>
         </>
     )
