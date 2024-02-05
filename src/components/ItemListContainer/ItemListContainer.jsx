@@ -3,6 +3,7 @@ import { pedirProductos } from '../../helpers/pedirProductos';
 import { useParams } from 'react-router-dom';
 import { ItemList } from '../ItemList/ItemList';
 import { DarkModeContext } from '../context/DarkModeProvider';
+
 import './ItemListContainer.css';
 
 
@@ -46,8 +47,8 @@ export const ItemListContainer = () => {
     return (
         <>
             <div className='tarjeta' style={style}>
-                <p> Modo oscuro: {isDarkMode ? 'Activado' : 'Desactivado'} </p>
-                <button onClick={toggleDarkMode}>Switch</button>
+                {/* <p> Modo oscuro: {isDarkMode ? 'Activado' : 'Desactivado'} </p> */}
+                {/* <CiDark className='btnBt'  onClick={toggleDarkMode}/> */}
                 {loading ? <div className='spinner'>
                     <span className="spinner-grow spinner-grow-xxl" aria-hidden="true">
                     </span>
