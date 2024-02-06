@@ -46,7 +46,7 @@ export const ItemListContainer = () => {
 
     return (
         <>
-            <div className='tarjeta' style={style}>
+            <div className='contenedor' style={style}>
                 {/* <p> Modo oscuro: {isDarkMode ? 'Activado' : 'Desactivado'} </p> */}
                 {/* <CiDark className='btnBt'  onClick={toggleDarkMode}/> */}
                 {loading ? <div className='spinner'>

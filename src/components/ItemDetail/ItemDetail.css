@@ -9,6 +9,10 @@ p, h5{
 .contador{
     display: flex;
     justify-content: center;
+   
+}
+.contenedor{
+    height: 100vh;
 }
 img{
     height: 200px;

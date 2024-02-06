@@ -38,7 +38,7 @@ export const ItemDetail = ({ id, name, description, price, photo, category, stoc
     }
 
     return (
-        <div className="card">
+        <div className="contenedor">
             <div>
                 <img src={photo} alt={photo} className="card-img-top" />
                 <h4>{description}</h4>

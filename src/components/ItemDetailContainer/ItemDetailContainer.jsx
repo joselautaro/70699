@@ -31,7 +31,7 @@ export const ItemDetailContainer = () => {
 
 
     return (
-        <div className="tarjeta">
+        <div>
             {
                 loading ? <div className="spinner"><span className="spinner-grow spinner-grow-xxl" aria-hidden="true"></span></div>
                     : <ItemDetail {...item} />

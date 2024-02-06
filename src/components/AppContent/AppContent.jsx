@@ -6,7 +6,7 @@ import { ItemListContainer } from '../ItemListContainer/ItemListContainer';
 import { NavBar } from '../NavBar/NavBar';
 import { Poke } from '../Poke/Poke';
 import { ItemDetailContainer } from '../ItemDetailContainer/ItemDetailContainer';
-import { DarkModeProvider, DarkModeContext } from '../context/DarkModeProvider';
+import { DarkModeContext } from '../context/DarkModeProvider';
 import {
   BrowserRouter as Router,
   Routes,
@@ -25,7 +25,6 @@ export const AppContent = () =>  {
     return (
   
       <div style={style}>
-        {/* <CiDark className='btnBt' onClick={toggleDarkMode} /> */}
         <Router>
           <NavBar toggleDarkMode={toggleDarkMode}/>
           <Routes>
