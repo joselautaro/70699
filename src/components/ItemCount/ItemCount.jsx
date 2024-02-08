@@ -6,6 +6,7 @@ export const ItemCount = ({max, cantidad, modify}) => {
     
 
     const sumar = () => {
+        console.log("sumar");
         if(cantidad < max){
             modify(cantidad + 1)
         }

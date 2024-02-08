@@ -3,7 +3,7 @@ export const stock = [
         id: 1,
         name: 'Producto 1',
         description: 'Pantalón',
-        photo: 'https://picsum.photos/seed/picsum/200/300',
+        photo: 'https://fastly.picsum.photos/id/103/2592/1936.jpg?hmac=aC1FT3vX9bCVMIT-KXjHLhP6vImAcsyGCH49vVkAjPQ',
         price: 25000,
         category: "ropa",
         stock: 20

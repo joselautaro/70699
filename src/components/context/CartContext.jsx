@@ -23,49 +23,49 @@ export const CartProvider = ( {children} ) =>{
     }
 
     const precioTotal = () =>{
-        return carrito.reduce((acc, prod) =>{
-            if( prod.price !== undefined && prod.counter !== undefined && typeof prod.price === 'number' && typeof prod.counter === 'number' ){
-                return acc + prod.price * prod.counter;
-            }
-        }, 0)
+        // return carrito.reduce((acc, prod) =>{
+        //     if( prod.price !== undefined && prod.counter !== undefined && typeof prod.price === 'number' && typeof prod.counter === 'number' ){
+        //         return acc + prod.price * prod.counter;
+        //     }
+        // }, 0)
+        return carrito.reduce((acc, prod) => acc + (prod.price || 0) * (prod.counter || 0), 0)
     }
     const removeItem = (itemId) =>{
         const newItem = carrito.filter((prod) =>  prod.id !== itemId)
         setCarrito(newItem)
-        const swalWithBootstrapButtons = Swal.mixin({
-            customClass: {
-              confirmButton: "btn btn-success",
-              cancelButton: "btn btn-danger"
-            },
-            buttonsStyling: false
-          });
-          swalWithBootstrapButtons.fire({
-            title: "Estás seguro de deseas eliminar el producto?",
-            text: "Esta acción no tiene retorno!",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonText: "Si, quiero eliminarlo!",
-            cancelButtonText: "No, cancelar!",
-            reverseButtons: true
-          }).then((result) => {
-            if (result.isConfirmed) {
-              swalWithBootstrapButtons.fire({
-                title: "Eliminado!",
-                text: "Tu producto ha sido eliminado.",
-                icon: "success"
-              });
-            } else if (
-              /* Read more about handling dismissals below */
-              result.dismiss === Swal.DismissReason.cancel
-            ) {
-              swalWithBootstrapButtons.fire({
-                title: "Cancelled",
-                text: "Your imaginary file is safe :)",
-                icon: "error"
-              });
+        Swal.fire({
+          position: "top-end",
+          icon: "warning",
+          title: "Producto eliminado satisfactoriamente",
+          showConfirmButton: false,
+          timer: 1000
+        });
+    }
+
+    const modify = (itemId, newCantidad) =>{
+        console.log(modify);
+        console.log(`itemId: ${itemId} a newCantidad: ${newCantidad}`);
+        const updateCarrito = carrito.map((prod) =>{
+            if( prod.id === itemId ){
+                return {...prod, counter: newCantidad}
             }
+            return prod;
+        })
+        setCarrito(updateCarrito)
+    }
+
+    const vaciarCarrito = () =>{
+        setCarrito([])
+        Swal.fire({
+            position: "top-end",
+            icon: "warning",
+            title: "Carrito vacio",
+            showConfirmButton: false,
+            timer: 1000
           });
     }
+
+   
 
     return(
         <CartContext.Provider value={{
@@ -73,7 +73,9 @@ export const CartProvider = ( {children} ) =>{
             addToCart,
             calcularCantidad,
             precioTotal,
-            removeItem
+            removeItem,
+            vaciarCarrito,
+            modify
         }}>
             {children}
         </CartContext.Provider>

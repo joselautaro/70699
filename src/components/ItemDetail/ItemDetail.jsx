@@ -36,6 +36,7 @@ export const ItemDetail = ({ id, name, description, price, photo, category, stoc
             timer: 1000
         });
     }
+    
 
     return (
         <div className="contenedor">
