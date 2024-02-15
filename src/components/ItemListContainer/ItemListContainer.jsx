@@ -47,8 +47,6 @@ export const ItemListContainer = () => {
     return (
         <>
             <div className='contenedor' style={style}>
-                {/* <p> Modo oscuro: {isDarkMode ? 'Activado' : 'Desactivado'} </p> */}
-                {/* <CiDark className='btnBt'  onClick={toggleDarkMode}/> */}
                 {loading ? <div className='spinner'>
                     <span className="spinner-grow spinner-grow-xxl" aria-hidden="true">
                     </span>

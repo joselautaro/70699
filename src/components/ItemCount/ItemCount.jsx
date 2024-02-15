@@ -7,16 +7,19 @@ export const ItemCount = ({max, cantidad, modify}) => {
 
     const sumar = () => {
         console.log("sumar");
+
         if(cantidad < max){
             modify(cantidad + 1)
         }
     }
 
     const restar = () => {
+        console.log("restar");
         if (cantidad > 0) {
             modify(cantidad - 1)
         }
     }
+    console.log("Cantidad inicial: ", cantidad);
 
     return (
         <div>

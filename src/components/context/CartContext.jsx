@@ -42,8 +42,8 @@ export const CartProvider = ( {children} ) =>{
         });
     }
 
-    const modify = (itemId, newCantidad) =>{
-        console.log(modify);
+    const modifyItem = (itemId, newCantidad) =>{
+        
         console.log(`itemId: ${itemId} a newCantidad: ${newCantidad}`);
         const updateCarrito = carrito.map((prod) =>{
             if( prod.id === itemId ){
@@ -75,7 +75,7 @@ export const CartProvider = ( {children} ) =>{
             precioTotal,
             removeItem,
             vaciarCarrito,
-            modify
+            modifyItem
         }}>
             {children}
         </CartContext.Provider>

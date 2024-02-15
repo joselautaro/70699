@@ -9,6 +9,8 @@ export const ItemDetail = ({ id, name, description, price, photo, category, stoc
 
     const [counter, setCounter] = useState(0)
 
+    console.log("Counter al agregar al carrito: ", counter);
+
     const otro = useNavigate();
 
     const volverAtras = () => {
@@ -25,7 +27,8 @@ export const ItemDetail = ({ id, name, description, price, photo, category, stoc
             photo,
             price,
             category,
-            counter
+            counter,
+            stock
         }
         addToCart(newItem)
         Swal.fire({
