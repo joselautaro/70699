@@ -1,9 +1,8 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
 import { HiOutlineTrash } from "react-icons/hi2";
 import { ItemCount } from "../ItemCount/ItemCount";
-import {CheckOut} from "../CheckOut/CheckOut"
 import './CartScreen.css'
 
 /*

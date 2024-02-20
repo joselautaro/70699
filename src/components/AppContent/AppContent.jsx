@@ -7,15 +7,20 @@ import { NavBar } from '../NavBar/NavBar';
 import { Poke } from '../Poke/Poke';
 import { ItemDetailContainer } from '../ItemDetailContainer/ItemDetailContainer';
 import { DarkModeContext } from '../context/DarkModeProvider';
+import { CartContext } from "../context/CartContext";
 import {
   BrowserRouter as Router,
   Routes,
-  Route
+  Route,
+  Navigate
 } from "react-router-dom";
+
 
 export const AppContent = () =>  {
 
     const { isDarkMode, toggleDarkMode } = useContext(DarkModeContext)
+
+    const {carrito} = useContext(CartContext)
   
     const style = {
       background: isDarkMode ? '#333' : '#fff',
@@ -33,8 +38,9 @@ export const AppContent = () =>  {
             <Route exact path='/detail/:itemId' element={<ItemDetailContainer />} />
             <Route exact path='/contador' element={<ItemCount />} />
             <Route exact path='/poke' element={<Poke />} />
-            <Route exact path='/cart' element={<CartScreen />} />
-            <Route exact path='/check' element={<CheckOut />} />
+            <Route path="/cart" element={<CartScreen/>}/>
+            <Route path="/check" element={carrito.length > 0 ? (<CheckOut/> ):( <Navigate to="/" replace/>)}/>
+            <Route path="*" element={<Navigate to='/' replace/>}/>
           </Routes>
         </Router>
       </div>
