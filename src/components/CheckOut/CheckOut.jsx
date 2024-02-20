@@ -96,10 +96,13 @@ export const CheckOut = () => {
             {
                 ordenId && (
                     <div className={`mt-4 ${modalVisible ? 'modal-visible' : 'modal-hidden'}`}>
-                        <h5>Orden generada con exito!</h5>
-                        <p>Numero de orden: {ordenId}</p>
-                        <p>Email: {formData.email}</p>
-                        <button className='btn btn-danger' onClick={closeModal}>Cerrar</button>
+                        <h3>Orden generada con exito!</h3>
+                        <h5>Estimado/a: {formData.nombre}</h5>
+                        <h5><i className='text-center'>Numero de orden: {ordenId}</i></h5>
+                        <p>Detalles enviados a: {formData.email}</p>
+                        <div class="d-grid gap-2 col-6 mx-auto">
+                        <button className='btn btn-danger text-center' onClick={closeModal}>Cerrar</button>
+                        </div>
                     </div>
                 )
             }
